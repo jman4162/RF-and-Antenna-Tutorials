@@ -4,7 +4,7 @@
 
 Worked problems in RF engineering, antennas and applied electromagnetics, written as Jupyter notebooks that derive the physics, implement it in plain NumPy/SciPy, and plot the results. Each notebook opens in Google Colab with one click, and CI executes every notebook on pushes to main, on pull requests, and once a month.
 
-The electromagnetics notebooks check their results with `assert` statements against closed-form solutions (Fresnel equations, discrete dispersion relations, the optical theorem, Rayleigh and optical limits), so a wrong result fails the build. Several of them are modern, tested versions of graduate projects from Virginia Tech; the original MATLAB is in [electromagnetics-work-samples](https://github.com/jman4162/electromagnetics-work-samples).
+The electromagnetics notebooks check their results with `assert` statements against closed-form solutions (Fresnel equations, discrete dispersion relations, the optical theorem, Rayleigh and optical limits), so a wrong result fails the build. Three of them are modern, tested versions of graduate projects from Virginia Tech; the original MATLAB is in [electromagnetics-work-samples](https://github.com/jman4162/electromagnetics-work-samples).
 
 ## Notebooks
 
