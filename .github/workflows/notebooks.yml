@@ -1,0 +1,26 @@
+name: Notebooks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 3 * *"  # monthly, to catch breakage from new NumPy/SciPy/Matplotlib releases
+
+jobs:
+  execute:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Install dependencies
+        run: pip install -r requirements.txt pytest nbmake
+      - name: Execute every notebook
+        env:
+          MPLBACKEND: Agg
+        run: pytest --nbmake --nbmake-timeout=900 *.ipynb
